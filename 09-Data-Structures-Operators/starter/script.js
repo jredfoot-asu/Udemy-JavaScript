@@ -50,6 +50,17 @@ const restaurant = {
   },
 };
 
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+// Nullish: Null and undefined (NOT 0 or '')
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
+
+/*
+////////////////////////////////
+// Short Circuiting Lecture. (&& and ||)
 // Use Any data type, return any data type, short-circuiting
 // Short-circuiting = if the first value is a truthy value, that's what will be returned
 console.log('---OR---');
@@ -83,6 +94,7 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza &&
   restaurant.orderPizza('mushrooms', 'spinach', 'pepperoni');
+*/
 
 /*
 /////////////////////////////

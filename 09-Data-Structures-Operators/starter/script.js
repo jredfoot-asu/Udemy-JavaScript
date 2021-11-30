@@ -50,6 +50,43 @@ const restaurant = {
   },
 };
 
+// Use Any data type, return any data type, short-circuiting
+// Short-circuiting = if the first value is a truthy value, that's what will be returned
+console.log('---OR---');
+console.log(3 || 'Jason');
+console.log('' || 'Jason');
+console.log(true || 0);
+console.log(undefined || null);
+
+// hello is the first truthy value in the evaluation.
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+// restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+// Operates in the oposite way as the or. When it's falsey.
+console.log('---AND---');
+console.log(0 && 'Jason');
+console.log(7 && 'Jason');
+
+// null is the falsey value and because one thing is false, the whole expression is false.
+console.log('Hello' && 23 && null && 'Jason');
+
+// practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza &&
+  restaurant.orderPizza('mushrooms', 'spinach', 'pepperoni');
+
+/*
+/////////////////////////////
+// Rest Pattern and Parameters
 // 1) Destructuring
 // Rest because on the left hand side of the assignment operator
 const [a, b, ...others] = [1, 2, 3, 4, 5];
@@ -81,6 +118,7 @@ add(...x);
 
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 restaurant.orderPizza('mushrooms');
+*/
 
 /*
 //////////////////////////////

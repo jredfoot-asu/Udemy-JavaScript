@@ -61,6 +61,87 @@ const restaurant2 = {
   owner: 'Giovanni Rossi',
 };
 
+// Coding Challenge #1
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nove 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+// 1. Create 2 arrays with the players from each team in them.
+const [players1, players2] = game.players;
+console.log(players1, players2);
+
+// 2. Assume first player is GK and the rest are field players and create an array for each team.
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
+
+// 3. Create one array with all the players in it.
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
+
+// 4. Adding the players that were subbed in to the array.
+const players1Final = [...players1, 'Thiage', 'Coutinho', 'Periscic'];
+console.log(players1Final);
+
+// 5.
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log(team1, draw, team2);
+
+// 6.
+const printGoals = function (...players) {
+  console.log(`${players.length} goals were scored.`);
+};
+
+printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+printGoals('Davies', 'Muller');
+printGoals(...game.scored);
+
+// 7. Team with lower odds is more likely to win. Print the more likely team to console.
+team1 < team2 && console.log('Team1 is more likely to win.');
+team1 > team2 && console.log('Team2 is more likely to win.');
+
+/*
+///////////////////////////
+// Logical Assignment operators.
 // Or assignment operator
 // restaurant1.numGuests = restaurant1.numGuests || 10;
 // restaurant2.numGuests = restaurant2.numGuests || 10;
@@ -79,6 +160,7 @@ restaurant2.owner &&= '<ANONYMOUS>';
 
 console.log(restaurant1);
 console.log(restaurant2);
+*/
 
 /*
 ////////////////////////////

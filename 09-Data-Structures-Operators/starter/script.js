@@ -50,6 +50,21 @@ const restaurant = {
   },
 };
 
+/*
+// For Of Loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+console.log([...menu.entries()]);
+*/
+
+/*
+/////////////////////////////////
+// Coding Challenge 1.
 const restaurant1 = {
   name: 'Capri',
   numGuests: 0,
@@ -138,6 +153,7 @@ printGoals(...game.scored);
 // 7. Team with lower odds is more likely to win. Print the more likely team to console.
 team1 < team2 && console.log('Team1 is more likely to win.');
 team1 > team2 && console.log('Team2 is more likely to win.');
+*/
 
 /*
 ///////////////////////////
